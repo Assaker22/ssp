@@ -1,0 +1,22 @@
+type Module {
+  id: ID!
+  project: String!
+  resources: [String!]!
+  tasks: [String!]!
+  evidenceText: String
+  mediaUrls: [String!]
+}
+
+type Query {
+  findAllModules: [Module!]!
+}
+
+type Mutation {
+  createModule(
+    project: String!
+    resources: [String!]!
+    tasks: [String!]!
+    evidenceText: String
+    mediaUrls: [String!]
+  ): Module!
+}
