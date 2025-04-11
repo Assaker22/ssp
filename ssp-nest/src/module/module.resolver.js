@@ -16,8 +16,12 @@ class ModuleResolver {
 
   @Mutation(() => Module)
   createModule(_, args) {
-    console.log('moduleService is:', this.moduleService);
     return this.moduleService.create(args);
+  }
+
+  @Mutation(() => Module, { nullable: true })
+  deleteModule(_, args) {
+    return this.moduleService.delete(args?.id);
   }
 }
 

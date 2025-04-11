@@ -10,11 +10,20 @@ const client = new ApolloClient({
 
 function App() {
   const [refresh, setRefresh] = useState(null);
+  const [openCreate, setOpenCreate] = useState(false);
   return (
     <ApolloProvider client={client}>
       <div className="min-h-screen bg-gray-50 p-4">
-        <ModuleForm setRefresh={setRefresh} />
-        <AllModules refresh={refresh} />
+        <ModuleForm
+          setRefresh={setRefresh}
+          openCreate={openCreate}
+          setOpenCreate={setOpenCreate}
+        />
+        <AllModules
+          refresh={refresh}
+          setRefresh={setRefresh}
+          setOpenCreate={setOpenCreate}
+        />
       </div>
     </ApolloProvider>
   );

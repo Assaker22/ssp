@@ -19,4 +19,6 @@ type Mutation {
     evidenceText: String
     mediaUrls: [String!]
   ): Module!
+
+  deleteModule(id: ID!): Module
 }

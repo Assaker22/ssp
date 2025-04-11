@@ -20,6 +20,13 @@ class ModuleService {
   findAll() {
     return db.modules;
   }
+
+  delete(id) {
+    const index = db.modules.findIndex((mod) => mod.id === id);
+    if (index === -1) return null;
+    const [removed] = db.modules.splice(index, 1);
+    return removed;
+  }
 }
 
 module.exports = { ModuleService };
